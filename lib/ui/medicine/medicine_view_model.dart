@@ -1,5 +1,5 @@
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:mediminder/app/locator.dart';
+import 'package:mediminder/app/app.locator.dart';
 import 'package:mediminder/models/Medicine.dart';
 import 'package:mediminder/services/medicine_service.dart';
 import 'package:stacked/stacked.dart';

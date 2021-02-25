@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:mediminder/app/locator.dart';
+import 'package:mediminder/app/app.locator.dart';
 import 'package:mediminder/models/Medicine.dart';
 import 'package:mediminder/services/medicine_service.dart';
 import 'package:mediminder/services/notification_service.dart';

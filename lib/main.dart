@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mediminder/app/locator.dart';
-import 'package:mediminder/app/router.gr.dart';
+import 'package:mediminder/app/app.locator.dart';
+import 'package:mediminder/app/app.router.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:timezone/data/latest.dart' as tz;
 
@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: Routes.startupView,
       debugShowCheckedModeBanner: false,
-      onGenerateRoute: AppRouter(),
+      onGenerateRoute: StackedRouter().onGenerateRoute,
       navigatorKey: StackedService.navigatorKey,
     );
   }

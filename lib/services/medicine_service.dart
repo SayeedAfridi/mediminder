@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:injectable/injectable.dart';
 import 'package:mediminder/models/Medicine.dart';
 import 'package:observable_ish/list/list.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -7,7 +6,6 @@ import 'package:stacked/stacked.dart';
 
 const String MEDICINEPREF = 'medicines';
 
-@lazySingleton
 class MedicineService with ReactiveServiceMixin {
   RxList<Medicine> _meds = RxList<Medicine>();
   List<Medicine> get meds => _meds.toList();

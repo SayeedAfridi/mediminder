@@ -1,9 +1,9 @@
-import 'package:mediminder/app/locator.dart';
+import 'package:mediminder/app/app.locator.dart';
 import 'package:mediminder/models/Medicine.dart';
 import 'package:mediminder/services/medicine_service.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
-import 'package:mediminder/app/router.gr.dart';
+import 'package:mediminder/app/app.router.dart';
 
 class HomeViewModel extends BaseViewModel {
   NavigationService _navigationService = locator<NavigationService>();

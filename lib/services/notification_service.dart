@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:injectable/injectable.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:timezone/timezone.dart' as tz;
-import 'package:mediminder/app/router.gr.dart';
-import '../app/locator.dart';
+import 'package:mediminder/app/app.router.dart';
+import 'package:mediminder/app/app.locator.dart';
 
-@lazySingleton
 class NotificationService {
   NavigationService _navigationService = locator<NavigationService>();
 
@@ -31,12 +29,14 @@ class NotificationService {
 
   Future<dynamic> onDidReceiveLocalNotification(
       int id, String title, String body, String payload) async {
-    _navigationService.navigateTo(Routes.medicineView(id: payload));
+    _navigationService.navigateTo(Routes.medicineView,
+        arguments: MedicineViewArguments(id: payload));
   }
 
   Future selectNotification(String payload) async {
     if (payload != null) {
-      _navigationService.navigateTo(Routes.medicineView(id: payload));
+      _navigationService.navigateTo(Routes.medicineView,
+          arguments: MedicineViewArguments(id: payload));
     }
   }
 

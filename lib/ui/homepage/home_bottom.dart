@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:mediminder/app/locator.dart';
+import 'package:mediminder/app/app.locator.dart';
 import 'package:mediminder/models/Medicine.dart';
 import 'package:mediminder/ui/homepage/home_bottom_view_model.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
-import 'package:mediminder/app/router.gr.dart';
+import 'package:mediminder/app/app.router.dart';
 
 class BottomContainer extends StatelessWidget {
   @override
@@ -109,7 +109,10 @@ class MedicineCard extends StatelessWidget {
         highlightColor: Colors.white,
         splashColor: Colors.grey,
         onTap: () async {
-          _navigationService.navigateTo(Routes.medicineView(id: medicine.id));
+          _navigationService.navigateTo(
+            Routes.medicineView,
+            arguments: MedicineViewArguments(id: medicine.id),
+          );
         },
         child: Container(
           decoration: BoxDecoration(

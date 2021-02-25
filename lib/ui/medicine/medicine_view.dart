@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route_annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:mediminder/ui/medicine/expanded_section.dart';
 import 'package:mediminder/ui/medicine/main_section.dart';
@@ -8,14 +7,14 @@ import 'package:stacked/stacked.dart';
 class MedicineView extends StatelessWidget {
   final String id;
   const MedicineView({
-    @PathParam() this.id,
-  });
+    Key key,
+    this.id,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<MedicineViewModel>.nonReactive(
       builder: (context, model, child) {
-        model.getMed(this.id);
         return Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.white,
@@ -76,6 +75,7 @@ class MedicineView extends StatelessWidget {
         );
       },
       viewModelBuilder: () => MedicineViewModel(),
+      onModelReady: (model) => model.getMed(this.id),
     );
   }
 }
